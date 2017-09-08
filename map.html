@@ -16,19 +16,19 @@
   // initialize the map
   var map = L.map('map', {scrollWheelZoom:false , crs: L.CRS.Simple});
 
-  var NewIcon = L.Icon.Default.extend ({
-    options: {
-      popupAnchor: [340, 0]
-    }
-  });
+  // var NewIcon = L.Icon.Default.extend ({
+  //   options: {
+  //     popupAnchor: [340, 0]
+  //   }
+  // });
+  //
+  // var newIcon = new NewIcon();
 
-  var newIcon = new NewIcon();
-
-  var babyDollTour = L.popup().setContent('<iframe id="tour1" src="http://www.revr.co/tours/-KrjYaJiS_IkK5fWvsvn" width="910" height="650" frameboarder="0"></iframe>');
-  var tigerLodgeTour = L.popup().setContent('<iframe id="tour2" src="http://www.revr.co/tours/-KrjYaJiS_IkK5fWvsvn" width="910" height="650" frameboarder="0"></iframe>');
-  var portLympeTour = L.popup().setContent('<iframe id="tour3" src="http://www.revr.co/tours/-KrjYaJiS_IkK5fWvsvn" width="910" height="650" frameboarder="0"></iframe>');
-  var pineWoodTour = L.popup().setContent('<iframe id="tour4" src="http://www.revr.co/tours/-KrjYaJiS_IkK5fWvsvn" width="910" height="650" frameboarder="0"></iframe>');
-  var hogDeerCreekTour = L.popup().setContent('<iframe id="tour4" src="http://www.revr.co/tours/-KrjYaJiS_IkK5fWvsvn" width="910" height="650" frameboarder="0"></iframe>');
+  var babyDollTour = L.popup().setContent('<iframe id="tour1" src="http://www.revr.co/tours/-KtWWxKFZ0xp7oCNnBka" width="910" height="650" frameboarder="0"></iframe>');
+  var tigerLodgeTour = L.popup().setContent('<iframe id="tour2" src="http://www.revr.co/tours/-KtWWUEPqjJ_WJoQsEwr" width="910" height="650" frameboarder="0"></iframe>');
+  var portLympeTour = L.popup().setContent('<iframe id="tour3" src="http://www.revr.co/tours/-KtWWiGLTUB4ZOiqmFB7" width="910" height="650" frameboarder="0"></iframe>');
+  var pineWoodTour = L.popup().setContent('<iframe id="tour4" src="http://www.revr.co/tours/-KtWXQN3G79jN9iTv7ov" width="910" height="650" frameboarder="0"></iframe>');
+  var hogDeerCreekTour = L.popup().setContent('<iframe id="tour4" src="http://www.revr.co/tours/-KtWX9Sg60q5eh34DRNE" width="910" height="650" frameboarder="0"></iframe>');
 
   var popupTourOptions =
     {
@@ -46,7 +46,7 @@
   var hogDeerCreek = L.latLng([43, 77]);
 
   // L.marker(babyDoll, {icon: circularIcon}).addTo(map).bindPopup(popup).openPopup();
-  L.marker(babyDoll, {icon: newIcon}).addTo(map).bindPopup(babyDollTour, popupTourOptions).openPopup();
+  L.marker(babyDoll).addTo(map).bindPopup(babyDollTour, popupTourOptions).openPopup();
   L.marker(tigerLodge).addTo(map).bindPopup(tigerLodgeTour, popupTourOptions).openPopup();
   L.marker(portLympeHotel).addTo(map).bindPopup(portLympeTour, popupTourOptions).openPopup();
   L.marker(pinewood).addTo(map).bindPopup(pineWoodTour, popupTourOptions).openPopup();
