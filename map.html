@@ -1,0 +1,59 @@
+<html>
+<head>
+  <title>Port Lympe Wildlife Park Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+  <style>
+    #map{ width: 100%; height: 100%; }
+}
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <script>
+  // initialize the map
+  var map = L.map('map', {scrollWheelZoom:false , crs: L.CRS.Simple});
+  var CircularIcon = L.Icon.Default.extend ({
+    options: {
+      iconUrl: 'circularIcon.png',
+      iconSize: [54,54]
+    }
+  });
+
+  var babyDollTour = L.popup().setContent('<iframe id="tour1" src="" width="700" height="500" frameboarder="0"></iframe>');
+  var tigerLodgeTour = L.popup().setContent('<iframe id="tour2" src="http://www.revr.co/tours/-KrjYaJiS_IkK5fWvsvn" width="700" height="500" frameboarder="0"></iframe>');
+  var portLympeTour = L.popup().setContent('<iframe id="tour3" src="" width="700" height="500" frameboarder="0"></iframe>');
+  var pineWoodTour = L.popup().setContent('<iframe id="tour4" src="" width="700" height="500" frameboarder="0"></iframe>');
+  var hogDeerCreekTour = L.popup().setContent('<iframe id="tour4" src="" width="700" height="500" frameboarder="0"></iframe>');
+
+  var popupTourOptions =
+    {
+    'maxWidth': '1000',
+    }
+
+  var circularIcon = new CircularIcon();
+
+  var bounds = [[0,0], [100, 140]];
+  var image = L.imageOverlay('portLympeMap.jpg', bounds).addTo(map);
+
+  //var babyDoll = L.latLng([ 21, 19.4]);
+  var babyDoll = L.latLng([ 23, 26]);
+  var tigerLodge = L.latLng([63, 27.5]);
+  var portLympeHotel = L.latLng([62.5, 34.5]);
+  var pinewood = L.latLng([79, 27]);
+  var hogDeerCreek = L.latLng([43, 77]);
+
+  // L.marker(babyDoll, {icon: circularIcon}).addTo(map).bindPopup(popup).openPopup();
+  L.marker(babyDoll).addTo(map).bindPopup(babyDollTour, popupTourOptions).openPopup();
+  L.marker(tigerLodge).addTo(map).bindPopup(tigerLodgeTour, popupTourOptions).openPopup();
+  L.marker(portLympeHotel).addTo(map).bindPopup(portLympeTour, popupTourOptions).openPopup();
+  L.marker(pinewood).addTo(map).bindPopup(pineWoodTour, popupTourOptions).openPopup();
+  L.marker(hogDeerCreek).addTo(map).bindPopup(hogDeerCreekTour, popupTourOptions).openPopup();
+
+  map.fitBounds(bounds);
+
+  </script>
+</body>
+</html>
