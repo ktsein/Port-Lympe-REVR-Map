@@ -16,6 +16,7 @@
   // initialize the map
   var map = L.map('map', {scrollWheelZoom:false , crs: L.CRS.Simple});
 
+  map.setView([ 50, 50], 1);
   // var NewIcon = L.Icon.Default.extend ({
   //   options: {
   //     popupAnchor: [340, 0]
@@ -38,14 +39,12 @@
   var bounds = [[0,0], [100, 140]];
   var image = L.imageOverlay('portLympeMap.jpg', bounds).addTo(map);
 
-  //var babyDoll = L.latLng([ 21, 19.4]);
   var babyDoll = L.latLng([ 23, 26]);
   var tigerLodge = L.latLng([63, 27.5]);
   var portLympeHotel = L.latLng([62.5, 34.5]);
   var pinewood = L.latLng([79, 27]);
   var hogDeerCreek = L.latLng([43, 77]);
 
-  // L.marker(babyDoll, {icon: circularIcon}).addTo(map).bindPopup(popup).openPopup();
   L.marker(babyDoll).addTo(map).bindPopup(babyDollTour, popupTourOptions).openPopup();
   L.marker(tigerLodge).addTo(map).bindPopup(tigerLodgeTour, popupTourOptions).openPopup();
   L.marker(portLympeHotel).addTo(map).bindPopup(portLympeTour, popupTourOptions).openPopup();
